@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "GROQ_API_KEY": "@groq-api-key",
+    "MONGODB_URI": "@mongodb-uri",
+    "MONGODB_DB_NAME": "@mongodb-db-name",
+    "CONTACT_EMAIL": "@contact-email",
+    "EMAIL_PASSWORD": "@email-password",
+    "HEYGEN_API_KEY": "@heygen-api-key"
+  }
+}

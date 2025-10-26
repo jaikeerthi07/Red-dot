@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-grey-200;
+  }
+  
+  body {
+    @apply bg-white text-grey-900 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-brown-500 via-brown-600 to-brown-700 bg-clip-text text-transparent;
+  }
+
+  .ai-glow {
+    box-shadow: 0 0 20px rgba(169, 119, 92, 0.5), 0 0 40px rgba(169, 119, 92, 0.3), 0 0 60px rgba(169, 119, 92, 0.1);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-brown-600 to-brown-700 hover:from-brown-700 hover:to-brown-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-brown-500/20 hover:border-brown-400/40;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-grey-500 text-grey-700 hover:bg-grey-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-grey-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brown-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brown-500;
+}
+
+/* Chat scrollbar */
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  @apply bg-grey-200/50;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  @apply bg-grey-500/40 rounded-full;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-grey-400/60;
+}
+
+/* Firefox scrollbar */
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(169, 119, 92, 0.4) rgba(224, 224, 224, 0.5);
+}
+
+/* Animated background patterns */
+.ai-background {
+  background: radial-gradient(circle at 20% 80%, rgba(208, 208, 208, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(160, 160, 160, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(169, 119, 92, 0.05) 0%, transparent 50%);
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation for AI elements */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(169, 119, 92, 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(169, 119, 92, 0.8);
+    transform: scale(1.05);
+  }
+}
